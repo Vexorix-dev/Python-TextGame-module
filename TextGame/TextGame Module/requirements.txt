@@ -1,0 +1,1 @@
+This module requires Python curses to function. Run 'pip install curses' in your terminal to get it.

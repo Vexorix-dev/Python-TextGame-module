@@ -1,0 +1,35 @@
+Usable Functions:
+
+
+1. __init__(self): use __init__(self) to initialize the keymapper Example:
+keymapper=Keymapper()
+
+2. set_action(self, key, action_function): set_action assigns a key to an action. The action is not defined, and so you will need to define a function before using this. Keymapper also need to be enabled. Example:
+
+def move_up():
+    print("Moving up!")
+def move_left():
+    print("Moving left!")
+def move_down():
+    print("Moving down!")
+def move_right():
+    print("Moving right!")
+keymapper = KeyMapper()
+keymapper.set_action(ord('w'), move_up)      # Action for 'w' key
+keymapper.set_action(ord('a'), move_left)    # Action for 'a' key
+keymapper.set_action(ord('s'), move_down)     # Action for 's' key
+keymapper.set_action(ord('d'), move_right)    # Action for 'd' key
+
+3. get_action('key'): Retrieves the action associated with a key. Can only be used if the key is assigned by set_action. Example:
+
+action=keymapper.get_action('w')
+print(action)
+>>>move_up
+
+4. start_listening(self): listens for pressed keys. Example:
+
+keymapper.start_listening() 
+
+5.stop_listening(self): Stops listening for keys, usually done automatically. Example:
+
+keymapper.stop_listening() 
